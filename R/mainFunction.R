@@ -168,18 +168,19 @@ rain <- function(x, deltat, period, period.delta = 0, peak.border = c(0.3,
                 setTxtProgressBar(pb, counter)
             
             subSet <- x[, pos]
+            
+            # if subset contains only 1 series, the matrix has to be forced
+            if (is.null(dim(subSet))) 
+                subSet <- matrix(subSet, ncol = 1)
+            
             #if no measurements are left repeat 'empty' results
             if (all(is.na(subSet))) {
                 len = ncol(subSet)
                 result[pos, ] <- data.frame(pVal = rep(1, len), 
                     phase = rep(0, len), peak = rep(0, len), 
-                    period = rep(period, len))
+                    period = rep(period/deltat, len))
                 next
             }
-            
-            # if subset contains only 1 series, the matrix has to be forced
-            if (is.null(dim(subSet))) 
-                subSet <- matrix(subSet, ncol = 1)
             
             # shrink the test set by removing the NA values
             subSet <- apply(subSet, 2, function(x) {
