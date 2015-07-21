@@ -87,6 +87,11 @@ harding <- function(mList, l = NULL, cycl = FALSE) {
             special <- 0
         }
         
+        # very special case sometimes leeding to problems
+        if(all(l == 1)){
+            special <- 0
+        }
+        
         # including first and last positions
         lList <- c(1, l[l > 1 & l < len], len)
         
