@@ -22,12 +22,12 @@ generateCode <- function(sequence, extremas, cycl = FALSE) {
         })
         # part between start and inflection
         if (l > 2) {
-            words <- c(words, paste(sort(sequence[2:(l - 1)]), collapse = ""))
+            words <- c(words, paste(sort(sequence[2:(l - 1)]), collapse = "."))
         }
         # part between inflection and end
         if (l < length(sequence) - 1) {
             words <- c(words, paste(sort(sequence[(l + 1):(length(sequence) - 
-                1)]), collapse = ""))
+                1)]), collapse = "."))
         }
         # collapse and return
         return(paste(sort(words), collapse = " "))
@@ -37,7 +37,7 @@ generateCode <- function(sequence, extremas, cycl = FALSE) {
         length(sequence))
     # generate contentStrings for each slope
     words <- sapply(2:length(ex), function(i) {
-        paste(sort(sequence[ex[i - 1]:ex[i]]), collapse = "")
+        paste(sort(sequence[ex[i - 1]:ex[i]]), collapse = ".")
     })
     # sort slopes and combine them
     return(paste(sort(words), collapse = " "))
@@ -200,7 +200,7 @@ umbrellaCirc <- function(tSer, nr.series = 1, periods = c(nrow(tSer)),
                 if (verbose) message("*", appendLF = FALSE)
                 hardingpos <- length(hardings) + 1
                 decoder <- rbind(decoder, data.frame(code = code, 
-                    harding <- hardingpos))
+                    harding = hardingpos))
                 hardings[[hardingpos]] <- harding(trials, extremas[[i]])$pval
                 distris[i] <- (hardingpos)
             }

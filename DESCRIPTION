@@ -1,8 +1,8 @@
 Package: rain
 Type: Package
 Title: Rhythmicity Analysis Incorporating Non-parametric Methods
-Version: 1.2.0
-Date: 2015-02-09
+Version: 1.2.1
+Date: 2015-09-01
 Author: Paul F. Thaben, Pål O. Westermark
 Maintainer: Paul F. Thaben <paul.thaben@charite.de>
 Description: This package uses non-parametric methods to detect rhythms
