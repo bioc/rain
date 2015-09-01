@@ -200,7 +200,7 @@ umbrellaCirc <- function(tSer, nr.series = 1, periods = c(nrow(tSer)),
                 if (verbose) message("*", appendLF = FALSE)
                 hardingpos <- length(hardings) + 1
                 decoder <- rbind(decoder, data.frame(code = code, 
-                    harding <- hardingpos))
+                    harding = hardingpos))
                 hardings[[hardingpos]] <- harding(trials, extremas[[i]])$pval
                 distris[i] <- (hardingpos)
             }
