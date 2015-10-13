@@ -1,7 +1,7 @@
 Package: rain
 Type: Package
 Title: Rhythmicity Analysis Incorporating Non-parametric Methods
-Version: 1.4.0
+Version: 1.5.0
 Date: 2015-09-01
 Author: Paul F. Thaben, Pål O. Westermark
 Maintainer: Paul F. Thaben <paul.thaben@charite.de>
