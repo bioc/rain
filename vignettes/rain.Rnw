@@ -1,6 +1,5 @@
 % 
 \documentclass[a4paper]{article}
-\usepackage{Sweave}
 
 <<style-Sweave, eval=TRUE, echo=FALSE, results=tex>>=
 BiocStyle::latex()
